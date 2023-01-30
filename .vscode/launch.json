@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ContextApplication<Context>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.dashidea.Context.ContextApplication",
+      "projectName": "Context",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
