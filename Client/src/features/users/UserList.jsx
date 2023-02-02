@@ -1,9 +1,10 @@
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser } from "../../app/UserSlice";
+import { deleteUser, getUser } from "../../app/UserSlice";
+import { useEffect } from "react";
 const UserList = () => {
-  const users = useSelector((store) => store.users);
+  const { users } = useSelector((state) => ({ ...state.users }));
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
@@ -13,6 +14,10 @@ const UserList = () => {
       })
     );
   };
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
 
   const renderCard = () =>
     users.map((user) => (
